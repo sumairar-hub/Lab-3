@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #809cf9;
+}
+
+.sidebar {
+    background-color: #d7f9d9;
+}
+
+.main {
+    background-color: #f7f1a6;
+}
+
+.footer {
+    background-color: #5ec1f2;
+}
+
+.card-featured {
+    background-color: #b1f7e3;
+}
+
+.card:nth-child(2) {
+    background-color: #f8beea;
+}
+
+.card:nth-child(3) {
+    background-color: #f597b5;
+}
+
+
+/* Mobile Layout */
+
+.page-layout {
+    display: grid;
+
+    grid-template-areas:
+        "hd"
+        "sd"
+        "mn"
+        "ft";
+
+    gap: 10px;
+}
+
+.header {
+    grid-area: hd;
+}
+
+.sidebar {
+    grid-area: sd;
+}
+
+.main {
+    grid-area: mn;
+}
+
+.footer {
+    grid-area: ft;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+
+/* Desktop Layout */
+
+@media (min-width: 768px) {
+
+    .page-layout {
+        display: grid;
+
+        grid-template-columns: 220px 1fr;
+
+        grid-template-areas:
+            "hd hd"
+            "sd mn"
+            "ft ft";
+
+        gap: 10px;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .card-featured {
+        grid-column: 1 / -1;
+    }
+
+}
